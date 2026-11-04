@@ -7,45 +7,72 @@
       "type": "registry:ui",
       "title": "Button",
       "description": "Web button component with variants and sizes",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/web/components/button/button.tsx",
           "type": "registry:ui",
           "target": "components/ui/button.tsx"
         }
-      ]
+      ],
+      "tailwind": {
+        "config": {
+          "content": []
+        }
+      }
     },
     {
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
       "description": "Web input component with label and error states",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/web/components/input/input.tsx",
           "type": "registry:ui",
           "target": "components/ui/input.tsx"
         }
-      ]
+      ],
+      "tailwind": {
+        "config": {
+          "content": []
+        }
+      }
     },
     {
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
       "description": "Web card component with title, description, and content sections",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/web/components/card/card.tsx",
           "type": "registry:ui",
           "target": "components/ui/card.tsx"
         }
-      ]
+      ],
+      "tailwind": {
+        "config": {
+          "content": []
+        }
+      }
     },
     {
       "name": "mobile-button",
       "type": "registry:ui",
       "title": "Mobile Button",
       "description": "React Native button styled with StyleSheet",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/mobile/components/button/button.tsx",
@@ -59,6 +86,9 @@
       "type": "registry:ui",
       "title": "Mobile Input",
       "description": "React Native text input styled with StyleSheet",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/mobile/components/input/input.tsx",
@@ -72,6 +102,9 @@
       "type": "registry:ui",
       "title": "Mobile Card",
       "description": "React Native card styled with StyleSheet",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
       "files": [
         {
           "path": "registry/mobile/components/card/card.tsx",

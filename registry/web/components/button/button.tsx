@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "default" | "outline";
@@ -9,27 +10,22 @@ export function Button({
   children,
   variant = "default",
   size = "default",
-  className = "",
+  className,
   disabled,
   ...props
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center rounded-xl font-semibold transition-opacity active:opacity-85 disabled:opacity-50";
-  
-  const variantStyles = {
-    default: "bg-black text-white",
-    outline: "bg-white border border-gray-300 text-black",
-  };
-  
-  const sizeStyles = {
-    default: "h-12 px-5 text-base",
-    sm: "h-10 px-4 text-sm",
-    lg: "h-14 px-7 text-lg",
-  };
-  
   return (
     <button
       disabled={disabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      className={cn(
+        "inline-flex items-center justify-center rounded-xl font-semibold transition-opacity active:opacity-85 disabled:opacity-50",
+        variant === "default" && "bg-black text-white",
+        variant === "outline" && "bg-white border border-gray-300 text-black",
+        size === "default" && "h-12 px-5 text-base",
+        size === "sm" && "h-10 px-4 text-sm",
+        size === "lg" && "h-14 px-7 text-lg",
+        className
+      )}
       {...props}
     >
       {children}

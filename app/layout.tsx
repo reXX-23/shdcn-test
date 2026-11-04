@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Mobile UI Library",
-  description: "React Native components for Expo",
+  title: "My UI Library",
+  description: "Beautiful web components built with React and Tailwind CSS",
 };
 
 export default function RootLayout({

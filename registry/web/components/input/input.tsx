@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
+import { cn } from "@/lib/utils";
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -9,8 +12,8 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 export function Input({
   label,
   error,
-  containerClassName = "",
-  className = "",
+  containerClassName,
+  className,
   onFocus,
   onBlur,
   ...props
@@ -18,18 +21,19 @@ export function Input({
   const [focused, setFocused] = useState(false);
 
   return (
-    <div className={`w-full flex flex-col gap-1.5 ${containerClassName}`}>
+    <div className={cn("w-full flex flex-col gap-1.5", containerClassName)}>
       {label && (
         <label className="text-sm font-medium text-gray-900">
           {label}
         </label>
       )}
       <input
-        className={`h-12 rounded-xl border ${
-          focused ? "border-black" : "border-gray-300"
-        } ${
-          error ? "border-red-500" : ""
-        } bg-white px-4 text-base text-black placeholder:text-gray-400 focus:outline-none ${className}`}
+        className={cn(
+          "h-12 rounded-xl border bg-white px-4 text-base text-black placeholder:text-gray-400 focus:outline-none",
+          focused ? "border-black" : "border-gray-300",
+          error && "border-red-500",
+          className
+        )}
         onFocus={(e) => {
           setFocused(true);
           onFocus?.(e);

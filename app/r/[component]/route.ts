@@ -22,11 +22,15 @@ export async function GET(
     );
   }
 
-  // Read the actual file content
+  // Read the actual file content from the registry folder
   const filesWithContent = await Promise.all(
     item.files.map(async (file) => {
       try {
-        const filePath = join(process.cwd(), file.path);
+        // Static path scoped to registry folder
+        const relativePath = file.path.startsWith('registry/') 
+          ? file.path.substring(9) // Remove 'registry/' prefix
+          : file.path;
+        const filePath = join(process.cwd(), 'registry', relativePath);
         const content = await readFile(filePath, 'utf-8');
         return {
           path: file.target,

@@ -4,9 +4,9 @@ import { components, SITE_URL } from "@/lib/registry-items";
 export default function Home() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-4xl font-bold tracking-tight">My Mobile UI</h1>
+      <h1 className="text-4xl font-bold tracking-tight">My UI Library</h1>
       <p className="mt-3 max-w-xl text-lg text-neutral-600 dark:text-neutral-400">
-        React Native components for Expo. Copy them into your app with one command.
+        Beautiful web components built with React and Tailwind CSS. Add them to your project with one command.
       </p>
 
       <ul className="mt-10 divide-y divide-neutral-200 dark:divide-neutral-800">
