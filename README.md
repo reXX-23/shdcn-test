@@ -1,4 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UI Component Library
+
+Live site: **https://shdcn-test-p9kj.vercel.app**
+
+This is a component library built with Next.js and Tailwind CSS, providing both web and mobile (React Native) components.
+
+## Web Components
+
+- **Button** - https://shdcn-test-p9kj.vercel.app/components/button
+- **Input** - https://shdcn-test-p9kj.vercel.app/components/input
+- **Card** - https://shdcn-test-p9kj.vercel.app/components/card
+
+## Installation
+
+```bash
+npx shadcn@latest add https://shdcn-test-p9kj.vercel.app/r/button.json
+npx shadcn@latest add https://shdcn-test-p9kj.vercel.app/r/input.json
+npx shadcn@latest add https://shdcn-test-p9kj.vercel.app/r/card.json
+```
 
 ## Getting Started
 
@@ -19,6 +37,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Component Structure
+
+- `/registry/web/` - Web components using React and Tailwind CSS
+- `/registry/mobile/` - React Native components using StyleSheet
 
 ## Learn More
 
