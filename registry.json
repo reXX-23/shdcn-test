@@ -1,5 +1,4 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "my-ui-library",
   "homepage": "https://shdcn-test-p9kj.vercel.app",
   "items": [
