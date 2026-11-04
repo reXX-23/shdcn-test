@@ -46,6 +46,7 @@ export async function GET(
 
   // Return the component definition in shadcn registry format
   const response = {
+    $schema: "https://ui.shadcn.com/schema/registry-item.json",
     name: item.name,
     type: item.type,
     ...(item.title && { title: item.title }),
