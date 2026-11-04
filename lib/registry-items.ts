@@ -1,7 +1,7 @@
 // Edit this file when you add a new component to registry.json.
 // Set NEXT_PUBLIC_SITE_URL to your real domain after deploying.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://shdcn-test-p9kj.vercel.app";
 
 export type Prop = {
   name: string;
@@ -27,26 +27,26 @@ export const components: ComponentDoc[] = [
     name: "button",
     title: "Button",
     description:
-      "A pressable button with default and outline variants, three sizes and a disabled state.",
+      "A clickable button with default and outline variants, three sizes and a disabled state.",
     dependencies: [],
     usage: `import { Button } from "@/components/ui/button";
 
 export default function Example() {
   return (
     <>
-      <Button label="Get started" onPress={() => {}} />
-      <Button label="Cancel" variant="outline" size="sm" />
-      <Button label="Saving..." disabled />
+      <Button onClick={() => {}}>Get started</Button>
+      <Button variant="outline" size="sm">Cancel</Button>
+      <Button disabled>Saving...</Button>
     </>
   );
 }`,
     props: [
-      { name: "label", type: "string", description: "Text shown inside the button." },
+      { name: "children", type: "React.ReactNode", description: "Content shown inside the button." },
       { name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual style." },
       { name: "size", type: '"default" | "sm" | "lg"', default: '"default"', description: "Height and padding." },
-      { name: "disabled", type: "boolean", default: "false", description: "Dims the button and blocks presses." },
-      { name: "style", type: "StyleProp<ViewStyle>", description: "Extra styles, applied after the defaults." },
-      { name: "...props", type: "PressableProps", description: "Everything else goes to Pressable, such as onPress." },
+      { name: "disabled", type: "boolean", default: "false", description: "Dims the button and blocks clicks." },
+      { name: "className", type: "string", description: "Additional CSS classes." },
+      { name: "...props", type: "ButtonHTMLAttributes", description: "Standard HTML button props like onClick." },
     ],
   },
   {
@@ -61,16 +61,16 @@ export default function Example() {
   return (
     <>
       <Input label="Email" placeholder="you@example.com" />
-      <Input label="Password" secureTextEntry error="Use at least 8 characters" />
+      <Input label="Password" type="password" error="Use at least 8 characters" />
     </>
   );
 }`,
     props: [
       { name: "label", type: "string", description: "Text shown above the field." },
       { name: "error", type: "string", description: "Shows a red border and this message below the field." },
-      { name: "containerStyle", type: "StyleProp<ViewStyle>", description: "Styles for the wrapper around label, field and error." },
-      { name: "style", type: "StyleProp<TextStyle>", description: "Styles for the text field itself." },
-      { name: "...props", type: "TextInputProps", description: "Everything else goes to TextInput, such as value and onChangeText." },
+      { name: "containerClassName", type: "string", description: "CSS classes for the wrapper around label, field and error." },
+      { name: "className", type: "string", description: "CSS classes for the input field itself." },
+      { name: "...props", type: "InputHTMLAttributes", description: "Standard HTML input props like value and onChange." },
     ],
   },
   {
@@ -96,8 +96,8 @@ export default function Example() {
   );
 }`,
     props: [
-      { name: "style", type: "StyleProp<ViewStyle | TextStyle>", description: "Extra styles, applied after the defaults." },
-      { name: "...props", type: "ViewProps | TextProps", description: "Card and CardContent take View props. CardTitle and CardDescription take Text props." },
+      { name: "className", type: "string", description: "Additional CSS classes." },
+      { name: "...props", type: "HTMLAttributes", description: "Card and CardContent take div props. CardTitle takes h3 props. CardDescription takes p props." },
     ],
   },
 ];

@@ -35,11 +35,7 @@ export default async function ComponentPage({
       </div>
       <p className="mt-3 text-sm text-muted">
         This adds <code className="font-mono text-ink">components/ui/{c.name}.tsx</code> to
-        your Expo app. See the{" "}
-        <Link href="/setup" className="text-accent underline underline-offset-4">
-          setup guide
-        </Link>{" "}
-        for the one-time project setup.
+        your project. The components use Tailwind CSS for styling.
       </p>
 
       <h2 className="mt-14 text-2xl font-semibold tracking-tight">Usage</h2>
@@ -74,7 +70,7 @@ export default async function ComponentPage({
       <h2 className="mt-14 text-2xl font-semibold tracking-tight">Dependencies</h2>
       {c.dependencies.length === 0 ? (
         <p className="mt-4 text-muted">
-          None. This component only uses <code className="font-mono text-ink">react-native</code>.
+          None. This component uses Tailwind CSS for styling.
         </p>
       ) : (
         <ul className="mt-4 flex flex-wrap gap-2">

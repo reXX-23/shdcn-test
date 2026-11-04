@@ -1,12 +1,51 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "my-mobile-ui",
-  "homepage": "http://localhost:3000",
+  "name": "my-ui-library",
+  "homepage": "https://shdcn-test-p9kj.vercel.app",
   "items": [
     {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
+      "description": "Web button component with variants and sizes",
+      "files": [
+        {
+          "path": "registry/web/components/button/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Web input component with label and error states",
+      "files": [
+        {
+          "path": "registry/web/components/input/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Web card component with title, description, and content sections",
+      "files": [
+        {
+          "path": "registry/web/components/card/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "mobile-button",
+      "type": "registry:ui",
+      "title": "Mobile Button",
       "description": "React Native button styled with StyleSheet",
       "files": [
         {
@@ -17,9 +56,9 @@
       ]
     },
     {
-      "name": "input",
+      "name": "mobile-input",
       "type": "registry:ui",
-      "title": "Input",
+      "title": "Mobile Input",
       "description": "React Native text input styled with StyleSheet",
       "files": [
         {
@@ -30,9 +69,9 @@
       ]
     },
     {
-      "name": "card",
+      "name": "mobile-card",
       "type": "registry:ui",
-      "title": "Card",
+      "title": "Mobile Card",
       "description": "React Native card styled with StyleSheet",
       "files": [
         {
