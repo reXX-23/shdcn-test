@@ -7,7 +7,10 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ component: string }> }
 ) {
-  const { component } = await params;
+  const { component: rawComponent } = await params;
+  
+  // Remove .json extension if present
+  const component = rawComponent.replace(/\.json$/, '');
 
   // Find the component in the registry
   const item = registryData.items.find((item) => item.name === component);
@@ -45,11 +48,14 @@ export async function GET(
   const response = {
     name: item.name,
     type: item.type,
-    registryDependencies: [],
+    ...(item.title && { title: item.title }),
+    ...(item.description && { description: item.description }),
+    registryDependencies: (item as any).registryDependencies || [],
+    dependencies: (item as any).dependencies || [],
+    devDependencies: (item as any).devDependencies || [],
     files: filesWithContent,
-    tailwind: {
-      config: {},
-    },
+    ...(item as any).tailwind && { tailwind: (item as any).tailwind },
+    ...(item as any).cssVars && { cssVars: (item as any).cssVars },
   };
 
   return NextResponse.json(response, {
