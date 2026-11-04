@@ -29,6 +29,7 @@ export async function GET(
         const filePath = join(process.cwd(), file.path);
         const content = await readFile(filePath, 'utf-8');
         return {
+          path: file.target,
           type: file.type,
           content,
           target: file.target,
@@ -36,6 +37,7 @@ export async function GET(
       } catch (error) {
         console.error(`Error reading file ${file.path}:`, error);
         return {
+          path: file.target,
           type: file.type,
           content: '',
           target: file.target,
